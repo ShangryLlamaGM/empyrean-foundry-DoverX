@@ -10,8 +10,8 @@
   ],
   "version": "0.4.74",
   "url": "https://gitlab.com/fosn-games/empyrean-foundry",
-  "manifest": "https://gitlab.com/fosn-games/empyrean-foundry/-/raw/Dover/system.json",
-  "download": "https://gitlab.com/fosn-games/empyrean-foundry/-/archive/Dover/empyrean-foundry-Dover.zip",
+  "manifest": "https://gitlab.com/fosn-games/empyrean-foundry/-/raw/DoverX/system.json",
+  "download": "https://gitlab.com/fosn-games/empyrean-foundry/-/archive/DoverX/empyrean-foundry-DoverX.zip",
   "compatibility": {
     "minimum": "13",
     "verified": "13.338"

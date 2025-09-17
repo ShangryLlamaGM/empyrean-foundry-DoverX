@@ -1,0 +1,23 @@
+<div id="design" class="flex0">
+  <h2 class="corners dark">{{localize "empyrean.design"}}</h2>
+
+  <div id="designs" class="flexcol spaced">
+    {{#each config.designTypes as |designType|}}
+      <h3 class="corners mid">
+        {{localize (concat "empyrean." designType)}}
+        <a class="addItem" data-item-type="design" data-item-subtype="{{designType}}">
+          <i class="fas fa-plus"></i>
+        </a>
+      </h3>
+      <div class="bordered">
+        {{#if (any (byKey @root.designs designType))}}
+          {{#each (byKey @root.designs designType) as |design|}}
+            {{> "systems/empyrean/templates/sheets/ship/design.hbs" design id=design.id}}
+          {{/each}}
+        {{else}}
+          <p class="center">{{localize "empyrean.none"}}</p>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</div>

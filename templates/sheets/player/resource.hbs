@@ -1,0 +1,17 @@
+<div class="padded rounded border-slim item" data-item-id="{{id}}">
+  <h3 class="itemContextMenu flexrow space-between">
+  <span>{{name}}</span>
+  <span class="resource-amount">{{system.amount}}</span>
+  {{#if system.type}}
+    <small class="text-light">{{localize (concat "empyrean." system.type)}}</small>
+  {{/if}}
+</h3>
+
+  <div class="drawer {{#if system.collapsed}}hidden{{/if}}">
+    
+
+    {{#if (any system.tags)}}
+      <p>{{system.tags}}</p>
+    {{/if}}
+  </div>
+</div>

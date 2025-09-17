@@ -1,0 +1,17 @@
+<div id="conviction" class="flex0">
+    <h2 class="corners dark">
+    {{title}}
+    <a class="addItem" data-item-type="{{type}}">
+      <i class="fas fa-plus"></i>
+    </a>
+    </h2>
+    {{#if (any convictions)}}
+    <div class="flexcol spaced item-list">
+      {{#each convictions as |conviction|}}
+            {{> "systems/empyrean/templates/shared/conviction.hbs" conviction id=conviction.id type=type}}
+      {{/each}}         
+   </div>
+    {{else}}
+    <p class="center corners light-transparent padded">{{localize "empyrean.none"}}</p>
+    {{/if}}
+</div>

@@ -1,0 +1,41 @@
+<form class="empyrean">
+  <div class="flexcol spaced">
+    <div id="header" class="flexrow spaced">
+      <div class="flexrow spaced">
+        <div class="flex0 img"><img src="{{item.img}}" data-edit="img" title="{{item.name}}" /></div>
+        <div class="flexcol spaced">
+          <input id="name" class="corners" type="text" name="name" value="{{item.name}}" placeholder="{{localize "empyrean.name"}}" />
+          <div class="flexrow spaced">
+            {{#if (eq item.type 'design')}}
+              {{> "systems/empyrean/templates/shared/select_field.hbs" field="system.type" value=system.type label="empyrean.type" selectOptions=config.designTypes}}
+            {{else}}
+              {{> "systems/empyrean/templates/shared/text_field.hbs" field="system.type" value=system.type label="empyrean.type"}}
+            {{/if}}
+            {{#if hasTrack}}
+              {{> "systems/empyrean/templates/shared/number_field.hbs" field="system.track.max" value=system.track.max label="empyrean.track" min=0 max=8}}
+            {{/if}}
+            {{> "systems/empyrean/templates/shared/number_field.hbs" field="system.stakes" value=system.stakes label="empyrean.stakes" min=0}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="body" class="flexcol spaced">
+      <section class="navigation">
+        <nav class="sheet-tabs tabs flexrow spaced" data-group="primary">
+          <a data-tab="main">{{localize "empyrean.description"}}</a>
+          <a data-tab="ratingMods">{{localize "empyrean.ratingMods"}}</a>
+        </nav>
+      </section>
+
+      <section class="sheet-body">
+        <div class="tab-main tab" data-group="primary" data-tab="main">
+          {{> "systems/empyrean/templates/shared/description.hbs" content=system.enrichedDetails target="system.details"}}
+        </div>
+        <div class="tab-rating-mods tab" data-group="primary" data-tab="ratingMods">
+          {{> "systems/empyrean/templates/shared/rating_mods.hbs"}}
+        </div>
+      </section>
+    </div>
+  </div>
+</form>

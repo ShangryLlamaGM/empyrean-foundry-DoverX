@@ -1,0 +1,23 @@
+<div id="skills" class="flex0">
+  <h2 class="corners dark">{{localize "empyrean.skills"}}</h2>
+  <div class="bordered">
+
+    {{#each skillsList as |row|}}
+      <div class="flexrow spaced wide">
+        {{#each row as |skill|}}
+          {{#if skill}}
+            {{> "systems/empyrean/templates/sheets/player/list_track.hbs"
+              name=(localize (concat "empyrean." skill))
+              value=(byKey @root.system.skills skill)
+              max=@root.config.skillMax
+              id=skill
+              type="skill"}}
+          {{else}}
+            <div class=""></div>
+          {{/if}}
+        {{/each}}
+      </div>
+    {{/each}}
+
+  </div>
+</div>

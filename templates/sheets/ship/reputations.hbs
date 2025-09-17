@@ -1,0 +1,17 @@
+<div id="reputations" class="flex0">
+  <h2 class="corners dark">
+    {{localize "empyrean.reputation"}}
+    <a class="addItem" data-item-type="reputations">
+      <i class="fas fa-plus"></i>
+    </a>
+  </h2>
+  {{#if (any system.reputations)}}
+    <div class="flexcol spaced slim-list">
+      {{#each system.reputations as |reputation|}}
+        {{> "systems/empyrean/templates/sheets/player/mire.hbs" reputation type="reputations"}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p class="center corners light-transparent padded">{{localize "empyrean.none"}}</p>
+  {{/if}}
+</div>

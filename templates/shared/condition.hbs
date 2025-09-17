@@ -1,0 +1,10 @@
+<div class="aspect item" data-item-id="{{id}}" style="border: 2px solid rgb(40, 7, 230)">
+    <h3 class="light handle">
+    <span class="itemContextMenu">{{name}}</span>
+     </h3>
+  {{> "systems/empyrean/templates/shared/track.hbs" system.track id=id type=type}}
+  
+  <div class="drawer {{#if system.collapsed}}hidden{{/if}}">
+    {{{system.enrichedDetails}}}
+  </div>
+</div>

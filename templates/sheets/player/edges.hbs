@@ -1,0 +1,22 @@
+<div id="edges" class="flex0">
+  <h2 class="corners dark">{{localize "empyrean.edges"}}</h2>
+  <div class="bordered">
+
+    {{#each edgesList as |row|}}
+      <div class="flexrow spaced wide">
+        {{#each row as |edge|}}
+          {{#if edge}}
+            {{> "systems/empyrean/templates/sheets/player/list_track.hbs"
+              name=(localize (concat "empyrean." edge))
+              value=(byKey @root.system.edges edge)
+              max=@root.config.edgeMax
+              id=edge
+              type="edge"}}
+          {{else}}
+            <div class=""></div>
+          {{/if}}
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</div>

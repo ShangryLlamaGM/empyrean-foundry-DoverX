@@ -1,0 +1,79 @@
+{
+  "id": "empyrean",
+  "title": "Empyrean",
+  "description": "Playtest for Empyrean - A Grimdark Gothic Space Opera",
+  "authors": [
+    {
+    
+      "name": "ShangryLlama"
+    }
+  ],
+  "version": "0.4.74",
+  "url": "https://gitlab.com/fosn-games/empyrean-foundry",
+  "manifest": "https://gitlab.com/fosn-games/empyrean-foundry/-/raw/Dover/system.json",
+  "download": "https://gitlab.com/fosn-games/empyrean-foundry/-/archive/Dover/empyrean-foundry-Dover.zip",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.338"
+    
+  },
+  "media": [
+    {
+      "type": "setup",
+      "url": "",
+      "thumbnail": ""
+    }
+  ],
+  
+  "esmodules": [
+    "empyrean.js"
+  ],
+  "styles": [
+    "styles/empyrean.css"
+  ],
+  "packs": [
+    {
+      "name": "character_aspects",
+      "label": "Character Aspects",
+      "system": "empyrean",
+      "path": "packs/character_aspects",
+      "type": "Item",
+      "banner": "systems/empyrean/assets/banners/character_aspects.webp"
+    },
+    {
+      "name": "ship_aspects",
+      "label": "Ship Aspects",
+      "system": "empyrean",
+      "path": "packs/ship_aspects",
+      "type": "Item",
+      "banner": "systems/empyrean/assets/banners/ship_aspects.webp"
+    },
+    {
+      "name": "journals",
+      "label": "Journals",
+      "system": "empyrean",
+      "path": "packs/journals",
+      "type": "JournalEntry",
+      "banner": "systems/empyrean/assets/banners/journals.webp"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English (US)",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "uk",
+      "name": "Ukraine (UK)",
+      "path": "lang/uk.json"
+    }
+  ],
+  "initiative": "1d20",
+  "actorTypes": [
+    "hazard",
+    "player",
+    "ship",
+    "threat"
+  ]
+}

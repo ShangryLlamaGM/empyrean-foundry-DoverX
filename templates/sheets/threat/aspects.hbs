@@ -1,0 +1,19 @@
+<div id="aspects" class="flex0">
+  <h2 class="corners dark">
+    {{localize "empyrean.aspects"}}
+    <a class="addItem" data-item-type="aspect">
+      <i class="fas fa-plus"></i>
+    </a>
+  </h2>
+    {{#if (any aspects)}}
+      <div class = "flexcol item-list spaced">
+        {{#each aspects as |aspect|}}
+        {{log "Passing to aspect.hbs:" aspect id=aspect.id type="aspect"}}
+        {{log "Inside #each: aspect object" aspect}}
+          {{> "systems/empyrean/templates/shared/aspect.hbs" aspect=aspect id=aspect.id type="aspect"}}
+        {{/each}}
+      </div>
+    {{else}}
+      <p class="center corners light-transparent padded">{{localize "empyrean.none"}}</p>
+    {{/if}}
+</div>

@@ -1,0 +1,20 @@
+<div id="resources" class="flex0">
+  <h2 class="corners dark">
+    {{localize "empyrean.resources"}}
+    <a class="addItem" data-item-type="resource">
+      <i class="fas fa-plus"></i>
+    </a>
+  </h2>
+
+  {{#if (any system.resources)}}
+    <form class="flexcol spaced item-list">
+      {{#each system.resources as |resource|}}
+        {{> "systems/empyrean/templates/sheets/player/resource.hbs" resource}}
+      {{/each}}
+    </form>
+  {{else}}
+    <p class="center corners light-transparent padded">
+      {{localize "empyrean.none"}}
+    </p>
+  {{/if}}
+</div>

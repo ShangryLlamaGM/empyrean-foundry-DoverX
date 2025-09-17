@@ -1,0 +1,51 @@
+<form class="empyrean">
+  <div class="flexcol spaced">
+    <div id="header" class="flexrow spaced">
+      <div class="flexrow spaced">
+        <div class="flex0 img">
+          <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        </div>
+        <div class="flexcol spaced">
+          <input
+            id="name"
+            class="corners"
+            type="text"
+            name="name"
+            value="{{item.name}}"
+            placeholder="{{localize "empyrean.name"}}"
+          />
+
+          <div class="flexrow spaced">
+            {{> "systems/empyrean/templates/shared/text_field.hbs"
+              field="system.tags"
+              label="empyrean.tags"
+              value=system.tags
+            }}
+            {{> "systems/empyrean/templates/shared/select_field.hbs"
+              field="system.type"
+              label="empyrean.type"
+              value=system.type
+              includeEmpty=true
+              selectOptions=config.resourceTypes
+            }}
+          </div>
+
+          <!-- Amount field added cleanly below -->
+          <div class="form-group">
+            <label for="amount">{{localize "empyrean.amount"}}</label>
+            <input
+              id="amount"
+              type="number"
+              name="system.amount"
+              value="{{system.amount}}"
+              class="corners"
+              min="0"
+              data-dtype="Number"
+            />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

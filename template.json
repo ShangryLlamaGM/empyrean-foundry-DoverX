@@ -1,0 +1,164 @@
+{
+  "Actor": {
+    "types": ["player", "ship", "threat"],
+    "player": {
+      "legacy": "",
+      "edges": {
+        "fury": 0,
+        "grace": 0,
+        "instinct": 0,
+        "iron": 0,
+        "litany": 0,
+        "radiance": 0,
+        "reason": 0,
+        "veils": 0
+      },
+      "languages": {
+        "lowAuric": 2,
+        "abythalyss": 0,
+        "auribond": 0,
+        "battleVox": 0,
+        "eldren": 0,
+        "ferric": 0,
+        "gant": 0,
+        "glyphic": 0,
+        "glosyr": 0,
+        "highAuric": 0,
+        "husken": 0,
+        "lantic": 0,
+        "metron": 0,
+        "skelter": 0,
+        "syncra": 0
+      },
+      "milestones": [],
+      "mires": [],
+      "homeworld": "",
+      "faction": "",
+      "path": "",
+      "skills": {
+        "battle": 0,
+        "break": 0,
+        "elude": 0,
+        "hunt": 0,
+        "impress": 0,
+        "influence": 0,
+        "mend": 0,
+        "move": 0,
+        "obscure": 0,
+        "sense": 0,
+        "study": 0,
+        "survive": 0,
+        "twist": 0
+        
+      }
+    },
+    "ship": {
+      "armaments": [],
+      "cargoPassengers": [],
+      "conditions": [],
+      "outriders": [],
+      "ratings": {
+        "armour": { "value": 0, "burn": 0, "max": 1 },
+        "saws": { "value": 0, "burn": 0, "max": 1 },
+        "seals": { "value": 0, "burn": 0, "max": 1 },
+        "speed": { "value": 0, "burn": 0, "max": 1 },
+        "stealth": { "value": 0, "burn": 0, "max": 1 },
+        "tilt": { "value": 0, "burn": 0, "max": 1 },
+        "depth": { "value": 0, "burn": 0, "max": 1 }
+      },
+      "reputations": [],
+      "rooms": [],
+      "stakes": { "value": 0, "max": 0 }
+    },
+    "threat": {
+      "type": "",
+      "size": "",
+      "traits": "",
+      "description": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "aspect",
+      "attribute",
+      "design",
+      "fitting",
+      "resource",
+      "temporaryTrack",
+      "conditionTrack",
+      "woundTrack",
+      "undercrew",
+      "conviction"
+    ],
+    "templates": {
+      "hasDetails": {
+        "details": "",
+        "collapsed": false
+      },
+      "hasTags": {
+        "tags": ""
+      },
+      "hasTrack": {
+        "track": {
+          "value": 0,
+          "burn": 0
+        }
+      },
+      "hasRatingMods": {
+        "ratingMods": []
+      }
+    },
+    "aspect": {
+      "templates": ["hasDetails", "hasTrack"],
+      "track": { "max": 6 },
+      "type": ""
+    },
+    "design": {
+      "templates": ["hasDetails", "hasRatingMods"],
+      "stakes": 1,
+      "type": ""
+    },
+    "fitting": {
+      "templates": ["hasDetails", "hasRatingMods"],
+      "stakes": 1,
+      "type": "",
+      "damaged": false
+    },
+    "resource": {
+      "templates": ["hasDetails", "hasTags", "hasTrack"],
+      "track": { "max": 6 },
+      "type": "",
+      "amount": 0
+    },
+    "temporaryTrack": {
+      "templates": ["hasDetails", "hasTags", "hasTrack"],
+      "track": { "max": 6 },
+      "type": ""
+    },
+    "woundTrack": {
+      "templates": ["hasDetails", "hasTrack"],
+      "track": { "max": 6 },
+      "type": ""
+    },
+    "conditionTrack": {
+      "templates": ["hasDetails", "hasTrack"],
+      "track": { "max": 6 },
+      "type": ""
+    },
+    "undercrew": {
+      "templates": ["hasDetails", "hasTrack", "hasRatingMods"],
+      "stakes": 1,
+      "track": { "max": 6 },
+      "type": ""
+    },
+    "conviction": {
+      "templates": ["hasDetails"],
+      "type": ""
+    },
+    "attribute": {
+      "templates": ["hasDetails", "hasTrack"],
+      "track": { "max": 6 },
+      "type": ""
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="aspect item" data-item-id="{{id}}">
+    <h3 class="light handle">
+        <span class="itemContextMenu">{{name}}</span>
+        {{#if system.stakes includeZero=true}}
+        <small class="text-light-transparent">{{stakesText system.stakes}}</small>
+        {{/if}}
+        <small class="text-light-transparent">{{system.type}}</small>
+    </h3>
+
+    <p>Conviction Data Check: {{system.checkboxes}}</p>
+
+    {{> "systems/empyrean/templates/shared/conviction_tracker.hbs" checkboxes=system.checkboxes highlightedIndex=conviction.system.highlightedIndex }}
+
+
+
+    <div class="drawer {{#if system.collapsed}}hidden{{/if}}">
+        {{{system.enrichedDetails}}}
+    </div>
+</div>

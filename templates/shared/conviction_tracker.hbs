@@ -1,0 +1,10 @@
+<p>Checkboxes Debug: {{checkboxes}}</p>
+
+<div class="checkbox-container">
+    {{#each checkboxes as |checked idx|}}
+        <p>Checkbox {{idx}}: {{checked}}</p>  <!-- Debug line -->
+        <label class="checkbox-label">
+            <input type="checkbox" name="system.checkboxes.{{idx}}" data-index="{{idx}}" {{#if checked}}checked{{/if}} />
+        </label>
+    {{/each}}
+</div>

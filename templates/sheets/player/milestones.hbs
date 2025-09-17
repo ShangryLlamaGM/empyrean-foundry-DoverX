@@ -1,0 +1,41 @@
+<div id="milestones" class="flex0">
+  <h2 class="corners dark">
+    {{localize "empyrean.milestones"}}
+  </h2>
+  <div class="flexrow spaced">
+    <div>
+      <h3 class="corners mid">
+        {{localize "empyrean.major"}}
+        <a class="addItem" data-item-type="milestone" data-item-subtype="major">
+          <i class="fas fa-plus"></i>
+        </a>
+      </h3>
+      {{#if (any system.milestone_major)}}
+        <div class="slim-list">
+          {{#each system.milestone_major as |milestone|}}
+            {{> "systems/empyrean/templates/shared/slim_item.hbs" milestone type="milestones"}}
+          {{/each}}
+        </div>
+      {{else}}
+        <p class="center corners light-transparent padded">{{localize "empyrean.none"}}</p>
+      {{/if}}
+    </div>
+    <div>
+      <h3 class="corners mid">
+        {{localize "empyrean.minor"}}
+        <a class="addItem" data-item-type="milestone" data-item-subtype="minor">
+          <i class="fas fa-plus"></i>
+        </a>
+      </h3>
+      {{#if (any system.milestone_minor)}}
+        <div class="slim-list">
+          {{#each system.milestone_minor as |milestone|}}
+            {{> "systems/empyrean/templates/shared/slim_item.hbs" milestone type="milestones"}}
+          {{/each}}
+        </div>
+      {{else}}
+        <p class="center corners light-transparent padded">{{localize "empyrean.none"}}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>

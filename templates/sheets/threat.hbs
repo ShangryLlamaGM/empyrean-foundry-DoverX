@@ -1,0 +1,30 @@
+<form class="empyrean">
+  <div class="flexrow spaced">
+    <div class="flexcol spaced">
+      <div class="flex flex0 flexrow spaced">
+        <div class="flex0 img"><img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" /> </div>
+        <div> <input id="name" class="corners" type="text" name="name" value="{{actor.name}}" placeholder="{{localize "empyrean.name"}}" /> </div>
+        
+      </div>
+        {{> "systems/empyrean/templates/shared/text_field.hbs" field="system.threatLevel" value=system.threatLevel label="empyrean.threatLevel"}}
+        {{!-- {{> "systems/empyrean/templates/sheets/player/drives.hbs"}} --}}
+        {{> "systems/empyrean/templates/sheets/threat/resources.hbs"}}
+        {{> "systems/empyrean/templates/shared/aspects.hbs"
+          aspects=temporaryTracks
+          title=(localize "empyrean.temporaryTracks")
+          type="temporaryTrack"}}
+        
+          
+      </div>
+      <div class="flexcol spaced">
+        
+        {{> "systems/empyrean/templates/shared/aspects.hbs"
+          aspects=aspects
+          title=(localize "empyrean.aspects")
+          type="aspect"}}
+        
+           
+      </div>
+      
+  </div>
+</form>

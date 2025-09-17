@@ -1,0 +1,23 @@
+<div id="languages" class="flex0">
+  <h2 class="corners dark">{{localize "empyrean.languages"}}</h2>
+  <div class="bordered">
+
+    {{#each languagesList as |row|}}
+      <div class="flexrow spaced wide">
+        {{#each row as |language|}}
+          {{#if language}}
+            {{> "systems/empyrean/templates/sheets/player/list_track.hbs"
+              name=(localize (concat "empyrean." language))
+              value=(byKey @root.system.languages language)
+              max=@root.config.languageMax
+              id=language
+              type="language"}}
+          {{else}}
+            <div class=""></div>
+          {{/if}}
+        {{/each}}
+      </div>
+    {{/each}}
+
+  </div>
+</div>

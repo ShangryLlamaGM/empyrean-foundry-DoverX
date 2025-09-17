@@ -1,0 +1,20 @@
+<form class="empyrean flexcol spaced">
+  <div class="form-group">
+    <label>{{localize "empyrean.rating"}}</label>
+    <div class="form-fields">
+      <select id="rating" name="rating" class="corners">
+        <option value="">{{localize "empyrean.none"}}</option>
+        {{#each ratings as |value label|}}
+          <option value="{{label}}" {{#if (eq ../rating label)}}selected{{/if}}>{{localize (concat "empyrean." label)}} (+{{value}}d)</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "empyrean.cut"}}</label>
+    <div class="form-fields">
+      <input id="cut" name="cut" type="number" min="0" placeholder="0" value="{{cut}}" />
+    </div>
+  </div>
+</form>

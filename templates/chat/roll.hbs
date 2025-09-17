@@ -1,0 +1,86 @@
+<div class="empyrean">
+  <h3>
+    Roll
+  </h3>
+  <div class="flexcol spaced">
+    <div class="dice-roll">
+      <div class="dice-result">
+        <h4 class="corners dice-formula">
+          {{displayFormula}}
+        </h4>
+        <div class="dice-tooltip" style="display: none;">
+          <div class="flexcol spaced">
+            {{#if dicePool.edge}}
+              <div class="flexrow spaced">
+                <label class="padded flex2">{{localize "empyrean.edge"}}</label>
+                <div class="padded flex2">{{localize (concat "empyrean." dicePool.edge)}}</div>
+                <div class="center corners light-transparent padded">
+                  +{{dicePool.edgeDice}}d
+                </div>
+              </div>
+            {{/if}}
+            {{#if dicePool.rating}}
+              <div class="flexrow spaced">
+                <label class="padded flex2">{{localize "empyrean.rating"}}</label>
+                <div class="padded flex2">{{localize (concat "empyrean." dicePool.rating)}}</div>
+                <div class="center corners light-transparent padded">
+                  +{{dicePool.ratingDice}}d
+                </div>
+              </div>
+            {{/if}}
+
+            {{#if dicePool.skillType}}
+              <div class="flexrow spaced">
+                <label class="padded flex2">{{localize (concat "empyrean." dicePool.skillType)}}</label>
+                <div class="padded flex2">{{localize (concat "empyrean." dicePool.skillKey)}}</div>
+                <div class="center corners light-transparent padded">
+                  +{{dicePool.skillDice}}d
+                </div>
+              </div>
+            {{/if}}
+
+            {{#if (gt dicePool.advantage 0)}}
+              <div class="flexrow spaced">
+                <label class="padded flex2">{{localize "empyrean.advantage"}}</label>
+                <div class="padded flex2"></div>
+                <div class="center corners light-transparent padded">
+                  +{{dicePool.advantage}}d
+                </div>
+              </div>
+            {{/if}}
+            
+            {{#if (gt dicePool.cut 0)}}
+              <div class="flexrow spaced">
+                <label class="padded flex2">{{localize "empyrean.cut"}}</label>
+                <div class="padded flex2"></div>
+                <div class="center corners light-transparent padded">
+                  {{dicePool.cut}}
+                </div>
+              </div>
+            {{/if}}
+          </div>
+
+          <hr />
+          
+          <!-- results -->
+          <ol class="dice-rolls">
+            {{#each results as |result|}}
+              <li class="roll die d6{{#if result.cut}} cut{{/if}}{{#if result.max}} max{{/if}}">{{result.result}}</li>
+            {{/each}}
+          </ol>
+        </div>
+        <h4 class="corners dice-total">
+          {{total}}
+        </h4>
+        <h3 class="corners dark padded center" data-tooltip="{{localize (concat "empyrean." resultText "Description")}}">
+          {{localize (concat "empyrean." resultText)}}
+        </h3>
+        {{#if flare}}
+        <h4 class="center corners mid padded" data-tooltip="{{localize "empyrean.flareDescription"}}">
+          {{localize "empyrean.flare"}}
+        </h4>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

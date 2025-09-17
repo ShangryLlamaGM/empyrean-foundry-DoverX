@@ -1,0 +1,17 @@
+<div id="conditions" class="flex0">
+  <h2 class="corners dark">
+    {{localize "empyrean.conditions"}}
+    <a class="addItem" data-item-type="conditions">
+      <i class="fas fa-plus"></i>
+    </a>
+  </h2>
+  {{#if (any system.conditions)}}
+    <div class="flexcol slim-list spaced">
+      {{#each system.conditions as |condition|}}
+        {{> "systems/empyrean/templates/shared/slim_item.hbs" condition type="conditions"}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p class="center corners light-transparent padded">{{localize "empyrean.none"}}</p>
+  {{/if}}
+</div>

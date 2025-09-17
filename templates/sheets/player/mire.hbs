@@ -1,0 +1,12 @@
+<div class="slim-item mire flexrow" data-item-id="{{id}}" data-item-type="{{type}}">
+  <div class="flex3 slimContextMenu" data-item-id="{{id}}" data-item-type="{{type}}">
+    {{#if text}}
+      <p>{{text}}</p>
+    {{else}}
+      <p><em>{{localize "empyrean.missing"}}</em></p>
+    {{/if}}
+  </div>
+  <div>
+    {{> "systems/empyrean/templates/shared/track.hbs" track id=id type=type}}
+  </div>
+</div>
